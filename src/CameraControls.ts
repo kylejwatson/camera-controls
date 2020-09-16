@@ -348,8 +348,6 @@ export class CameraControls extends EventDispatcher {
 
 				if ( ! this.enabled ) return;
 
-				event.preventDefault();
-
 				const prevState = this._state;
 
 				switch ( event.touches.length ) {
@@ -457,8 +455,6 @@ export class CameraControls extends EventDispatcher {
 			const startDragging = ( event: Event ): void => {
 
 				if ( ! this.enabled ) return;
-
-				event.preventDefault();
 
 				extractClientCoordFromEvent( event, _v2 );
 

@@ -207,8 +207,7 @@
 	        _this._needsUpdate = true;
 	        _this._updatedLastTime = false;
 	        if (typeof THREE === 'undefined') {
-	            console.error("Three.js is undefined. You must first run CameraControls.install({ THREE: THREE }). Check the docs for further information.");
-	            return _this;
+	            console.error('camera-controls: `THREE` is undefined. You must first run `CameraControls.install( { THREE: THREE } )`. Check the docs for further information.');
 	        }
 	        _this._camera = camera;
 	        _this._yAxisUpSpace = new THREE.Quaternion().setFromUnitVectors(_this._camera.up, _AXIS_Y);
@@ -326,7 +325,6 @@
 	            var onTouchStart_1 = function (event) {
 	                if (!_this.enabled)
 	                    return;
-	                event.preventDefault();
 	                var prevState = _this._state;
 	                switch (event.touches.length) {
 	                    case 1:
@@ -391,7 +389,6 @@
 	            var startDragging_1 = function (event) {
 	                if (!_this.enabled)
 	                    return;
-	                event.preventDefault();
 	                extractClientCoordFromEvent(event, _v2);
 	                _this._getClientRect(elementRect_1);
 	                dragStartPosition_1.copy(_v2);
